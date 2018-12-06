@@ -154,8 +154,7 @@ main #main-section {
         overflow: hidden; }
         main #main-section #views #view-carousel #view-nav ul {
           padding: 0;
-          margin: 0;
-          overflow: auto; }
+          margin: 0; }
           main #main-section #views #view-carousel #view-nav ul .navigation-right {
             margin-left: -625px;
             transition: all 1s; }
@@ -300,7 +299,18 @@ footer {
   main #main-banner {
     display: none; }
   main svg.carousel-svg {
-    display: none; } }
+    display: none; }
+  main #main-section #views #view-carousel #view-nav ul {
+    overflow: auto; }
+  main #main-section #pet-category #pet-category-flex {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar; }
+    main #main-section #pet-category #pet-category-flex article {
+      width: 320px;
+      margin: 0 0 0 20px;
+      flex: 0 0 auto; } }
 
 @media screen and (max-width: 900px) {
   main #main-section #views #view-nav {
