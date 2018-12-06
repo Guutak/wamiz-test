@@ -16,7 +16,11 @@ a {
 a:hover {
   cursor: pointer; }
 
+::-webkit-scrollbar {
+  display: none; }
+
 header {
+  position: relative;
   text-align: center;
   padding: 0 17%; }
   header #header-flex {
@@ -27,6 +31,29 @@ header {
     align-items: center;
     height: 144px;
     width: 100%; }
+    header #header-flex #header-menu-container {
+      display: none;
+      position: relative;
+      width: 26px;
+      height: 18px; }
+      header #header-flex #header-menu-container span {
+        position: absolute;
+        background: #cdcdcd;
+        border: none;
+        height: 2px;
+        width: 26px;
+        top: 0;
+        margin-left: auto;
+        left: 0;
+        right: 0;
+        transition: all .35s ease;
+        cursor: pointer; }
+      header #header-flex #header-menu-container .middle {
+        top: 7px; }
+      header #header-flex #header-menu-container .bottom {
+        top: 14px; }
+    header #header-flex i {
+      display: none; }
     header #header-flex #header-main-logo {
       max-width: 280px;
       width: 100%; }
@@ -108,37 +135,65 @@ main #main-section {
   main #main-section #views {
     width: 100%;
     margin-bottom: 40px; }
-    main #main-section #views #view-nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between; }
-      main #main-section #views #view-nav article {
-        width: 42.5%;
-        height: 202px;
-        padding: 20px;
-        border: 1px solid #e9e9e9; }
-        main #main-section #views #view-nav article .view-picture {
-          width: 23%; }
-          main #main-section #views #view-nav article .view-picture img {
-            width: 100%; }
-        main #main-section #views #view-nav article .view-flex {
-          display: flex;
-          flex-wrap: nowrap;
-          justify-content: space-between;
-          align-items: center;
-          height: 100%; }
-          main #main-section #views #view-nav article .view-flex .view-title {
-            width: 75%; }
-            main #main-section #views #view-nav article .view-flex .view-title img {
-              width: 18px;
-              height: 16px; }
-            main #main-section #views #view-nav article .view-flex .view-title p {
-              font-size: 17px;
-              margin-top: 0; }
-            main #main-section #views #view-nav article .view-flex .view-title h5 {
-              font-size: 21px;
-              font-weight: bold;
-              margin: 0; }
+    main #main-section #views #view-carousel {
+      position: relative; }
+      main #main-section #views #view-carousel svg.carousel-svg {
+        position: absolute;
+        left: -3%;
+        top: 50%;
+        transform: rotate(90deg);
+        cursor: pointer; }
+      main #main-section #views #view-carousel #carousel-left {
+        display: none; }
+      main #main-section #views #view-carousel #carousel-right {
+        left: initial;
+        right: -3%;
+        transform: rotate(-90deg); }
+      main #main-section #views #view-carousel #view-nav {
+        white-space: nowrap;
+        overflow: hidden; }
+        main #main-section #views #view-carousel #view-nav ul {
+          padding: 0;
+          margin: 0;
+          overflow: auto; }
+          main #main-section #views #view-carousel #view-nav ul .navigation-right {
+            margin-left: -625px;
+            transition: all 1s; }
+          main #main-section #views #view-carousel #view-nav ul .navigation-left {
+            margin-left: 0;
+            transition: all 1s; }
+          main #main-section #views #view-carousel #view-nav ul li {
+            list-style-type: none;
+            display: inline-block;
+            margin-right: 10px; }
+            main #main-section #views #view-carousel #view-nav ul li article {
+              padding: 20px;
+              border: 1px solid #e9e9e9;
+              height: 202px;
+              width: 570px;
+              white-space: initial; }
+              main #main-section #views #view-carousel #view-nav ul li article .view-picture {
+                width: 23%; }
+                main #main-section #views #view-carousel #view-nav ul li article .view-picture img {
+                  width: 100%; }
+              main #main-section #views #view-carousel #view-nav ul li article .view-flex {
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                align-items: center;
+                height: 100%; }
+                main #main-section #views #view-carousel #view-nav ul li article .view-flex .view-title {
+                  width: 75%; }
+                  main #main-section #views #view-carousel #view-nav ul li article .view-flex .view-title img {
+                    width: 18px;
+                    height: 16px; }
+                  main #main-section #views #view-carousel #view-nav ul li article .view-flex .view-title p {
+                    font-size: 17px;
+                    margin-top: 0; }
+                  main #main-section #views #view-carousel #view-nav ul li article .view-flex .view-title h5 {
+                    font-size: 21px;
+                    font-weight: bold;
+                    margin: 0; }
   main #main-section #pet-category #pet-category-flex {
     display: flex;
     flex-wrap: wrap;
@@ -232,3 +287,42 @@ footer {
     top: 0; }
   main #main-section #pet-category #pet-category-flex article {
     max-width: 320px; } }
+
+@media screen and (max-width: 1024px) {
+  header #header-flex #header-menu-container {
+    display: block; }
+  header #header-flex i {
+    display: block;
+    color: #F06373;
+    font-size: 18px; }
+  header #header-flex #header-main-logs {
+    display: none; }
+  main #main-banner {
+    display: none; }
+  main svg.carousel-svg {
+    display: none; } }
+
+@media screen and (max-width: 900px) {
+  main #main-section #views #view-nav {
+    flex-wrap: nowrap; }
+    main #main-section #views #view-nav article {
+      width: 60%;
+      min-width: 400px;
+      margin-right: 20px; } }
+
+@media screen and (max-width: 768px) {
+  main #main-section #views #view-carousel #view-nav ul li article {
+    width: 350px;
+    height: auto;
+    text-align: center; }
+    main #main-section #views #view-carousel #view-nav ul li article .view-picture {
+      width: 50%; }
+    main #main-section #views #view-carousel #view-nav ul li article .view-flex {
+      flex-wrap: wrap;
+      justify-content: center; }
+      main #main-section #views #view-carousel #view-nav ul li article .view-flex p.view-title-paragraphe {
+        text-align: justify; } }
+
+@media screen and (max-width: 550px) {
+  header {
+    padding: 0 20px; } }

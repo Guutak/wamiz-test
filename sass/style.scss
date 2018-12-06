@@ -31,7 +31,12 @@ a:hover {
 	cursor: pointer;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 header {
+	position: relative;
 	text-align: center;
 	padding: 0 17%;
 
@@ -43,6 +48,39 @@ header {
 		align-items: center;
 		height: 144px;
 		width: 100%;
+
+		#header-menu-container {
+			display: none;
+			position: relative;
+			width: 26px;
+			height: 18px;
+
+				span {
+					position: absolute;
+					background: #cdcdcd;
+					border: none;
+					height: 2px;
+					width: 26px;
+					top: 0;
+					margin-left: auto;
+					left: 0;
+					right: 0;
+					transition: all .35s ease;
+					cursor: pointer;
+				}
+
+				.middle {
+					top: 7px;
+				}
+
+				.bottom {
+					top: 14px;
+				}
+		}
+
+		i {
+			display: none;
+		}
 
 		#header-main-logo {
 			max-width: 280px;
@@ -165,51 +203,95 @@ main {
 			width: 100%;
 			margin-bottom: 40px;
 
-			#view-nav {
-				display: flex;
-				flex-wrap: wrap;
-				justify-content: space-between;
+			#view-carousel {
+				position: relative;
 
-				article {
-					width: 42.5%;
-					height: 202px;
-					padding: 20px;
-					border: 1px solid #e9e9e9;
+				svg.carousel-svg {
+					position: absolute;
+					left: -3%;
+					top: 50%;
+					transform: rotate(90deg);
+					cursor: pointer;
+				}
 
-					.view-picture {
-						width: 23%;
+				#carousel-left {
+					display: none;
+				}
 
-						img {
-							width: 100%;
+				#carousel-right {
+					left: initial;
+					right: -3%;
+					transform: rotate(-90deg);
+				}
+
+				#view-nav {
+					white-space: nowrap;
+					overflow: hidden;
+
+					ul {
+						padding: 0;
+						margin: 0;
+						overflow: auto;
+
+						.navigation-right {
+							margin-left: -625px;
+							transition: all 1s;
 						}
-					}
 
-					.view-flex {
-						display: flex;
-						flex-wrap: nowrap;
-						justify-content: space-between;
-						align-items: center;
-						height: 100%;
+						.navigation-left {
+							margin-left: 0;
+							transition: all 1s;
+						}
 
-						.view-title {
-							width: 75%;
+						li {
+							list-style-type: none;
+							display: inline-block;
+							margin-right: 10px;
 
-							img {
-								width: 18px;
-								height: 16px;
+							article {
+								padding: 20px;
+								border: 1px solid #e9e9e9;
+								height: 202px;
+								width: 570px;
+								white-space: initial;
+
+								.view-picture {
+									width: 23%;
+
+									img {
+										width: 100%;
+									}
+								}
+
+								.view-flex {
+									display: flex;
+									flex-wrap: nowrap;
+									justify-content: space-between;
+									align-items: center;
+									height: 100%;
+
+									.view-title {
+										width: 75%;
+
+										img {
+											width: 18px;
+											height: 16px;
+										}
+
+										p {
+											font-size: 17px;
+											margin-top: 0;
+										}
+
+										h5 {
+											font-size: 21px;
+											font-weight: bold;
+											margin: 0;
+										}
+
+									}
+								}
 							}
-
-							p {
-								font-size: 17px;
-								margin-top: 0;
-							}
-
-							h5 {
-								font-size: 21px;
-								font-weight: bold;
-								margin: 0;
-							}
-
 						}
 					}
 				}
@@ -390,5 +472,92 @@ footer {
 				}
 			}
 		}
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	header {
+		#header-flex {
+			#header-menu-container {
+				display: block;
+			}
+
+			i {
+				display: block;
+				color: $color-regular-red;
+				font-size: 18px;
+			}
+
+			#header-main-logs {
+				display: none;
+			}
+		}
+	}
+
+	main {
+		#main-banner {
+			display: none;
+		}
+
+		svg.carousel-svg {
+			display: none;
+		}
+	}
+}
+
+@media screen and (max-width: 900px) {
+	main {
+		#main-section {
+			#views {
+				#view-nav {
+					flex-wrap: nowrap;
+
+					article {
+						width: 60%;
+						min-width: 400px;
+						margin-right: 20px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	main {
+		#main-section {
+			#views {
+				#view-carousel {
+					#view-nav {
+						ul li {
+							article {
+								width: 350px;
+								height: auto;
+								text-align: center;
+
+								.view-picture {
+									width: 50%;
+								}
+
+								.view-flex {
+									flex-wrap: wrap;
+									justify-content: center;
+
+									p.view-title-paragraphe {
+										text-align: justify;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 550px) {
+	header {
+		padding: 0 20px;
 	}
 }
