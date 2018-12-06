@@ -54,6 +54,7 @@ header {
 			position: relative;
 			width: 26px;
 			height: 18px;
+			cursor: pointer;
 
 				span {
 					position: absolute;
@@ -515,10 +516,6 @@ footer {
 
 			#pet-category {
 				#pet-category-flex {
-					// white-space: nowrap;
-					// overflow: hidden;
-					// display: inline-block;
-					// width: 100%;
 					flex-wrap: nowrap;
 					overflow-x: auto;
 					-webkit-overflow-scrolling: touch;
@@ -526,10 +523,9 @@ footer {
 
 					article {
 						width: 320px;
-						//display: inline-block;
-						//white-space: unset;
-						margin: 0 0 0 20px;
+						margin: 0 20px 0 0;
 						flex: 0 0 auto;
+						font-size: 19px;
 					}
 				}
 			}
@@ -542,12 +538,9 @@ footer {
 		#main-section {
 			#views {
 				#view-nav {
-					flex-wrap: nowrap;
-
 					article {
 						width: 60%;
 						min-width: 400px;
-						margin-right: 20px;
 					}
 				}
 			}
@@ -558,14 +551,24 @@ footer {
 @media screen and (max-width: 768px) {
 	main {
 		#main-section {
+			h3.section-subtitle {
+				font-size: 18px;
+			}
+
+			.section-redirect {
+				margin: 0 0 10px;
+			}
+
 			#views {
 				#view-carousel {
 					#view-nav {
 						ul li {
 							article {
-								width: 350px;
-								height: auto;
+								width: 170px;
+								height: 319px;
 								text-align: center;
+								min-width: unset;
+								padding: 20px;
 
 								.view-picture {
 									width: 50%;
@@ -575,8 +578,21 @@ footer {
 									flex-wrap: wrap;
 									justify-content: center;
 
-									p.view-title-paragraphe {
-										text-align: justify;
+									.view-title {
+										width: 100%;
+
+										p {
+											font-size: 12px;
+										}
+
+										p.view-title-paragraphe {
+											text-align: justify;
+											font-size: 14px;
+										}
+
+										h5 {
+											font-size: 18px;
+										}
 									}
 								}
 							}
@@ -586,10 +602,33 @@ footer {
 			}
 		}
 	}
+
+	footer {
+		#footer-info {
+			p {
+				font-size: 14px;
+			}
+
+			svg {
+				width: 84px;
+				height: 32px;
+			}
+
+			h5 {
+				font-size: 14px;
+			}
+		}
+	}
 }
 
 @media screen and (max-width: 550px) {
 	header {
 		padding: 0 20px;
+
+		#header-flex {
+			#header-main-logo {
+				max-width: 200px;
+			}
+		}
 	}
 }

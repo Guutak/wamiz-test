@@ -35,7 +35,8 @@ header {
       display: none;
       position: relative;
       width: 26px;
-      height: 18px; }
+      height: 18px;
+      cursor: pointer; }
       header #header-flex #header-menu-container span {
         position: absolute;
         background: #cdcdcd;
@@ -309,30 +310,50 @@ footer {
     -ms-overflow-style: -ms-autohiding-scrollbar; }
     main #main-section #pet-category #pet-category-flex article {
       width: 320px;
-      margin: 0 0 0 20px;
-      flex: 0 0 auto; } }
+      margin: 0 20px 0 0;
+      flex: 0 0 auto;
+      font-size: 19px; } }
 
 @media screen and (max-width: 900px) {
-  main #main-section #views #view-nav {
-    flex-wrap: nowrap; }
-    main #main-section #views #view-nav article {
-      width: 60%;
-      min-width: 400px;
-      margin-right: 20px; } }
+  main #main-section #views #view-nav article {
+    width: 60%;
+    min-width: 400px; } }
 
 @media screen and (max-width: 768px) {
+  main #main-section h3.section-subtitle {
+    font-size: 18px; }
+  main #main-section .section-redirect {
+    margin: 0 0 10px; }
   main #main-section #views #view-carousel #view-nav ul li article {
-    width: 350px;
-    height: auto;
-    text-align: center; }
+    width: 170px;
+    height: 319px;
+    text-align: center;
+    min-width: unset;
+    padding: 20px; }
     main #main-section #views #view-carousel #view-nav ul li article .view-picture {
       width: 50%; }
     main #main-section #views #view-carousel #view-nav ul li article .view-flex {
       flex-wrap: wrap;
       justify-content: center; }
-      main #main-section #views #view-carousel #view-nav ul li article .view-flex p.view-title-paragraphe {
-        text-align: justify; } }
+      main #main-section #views #view-carousel #view-nav ul li article .view-flex .view-title {
+        width: 100%; }
+        main #main-section #views #view-carousel #view-nav ul li article .view-flex .view-title p {
+          font-size: 12px; }
+        main #main-section #views #view-carousel #view-nav ul li article .view-flex .view-title p.view-title-paragraphe {
+          text-align: justify;
+          font-size: 14px; }
+        main #main-section #views #view-carousel #view-nav ul li article .view-flex .view-title h5 {
+          font-size: 18px; }
+  footer #footer-info p {
+    font-size: 14px; }
+  footer #footer-info svg {
+    width: 84px;
+    height: 32px; }
+  footer #footer-info h5 {
+    font-size: 14px; } }
 
 @media screen and (max-width: 550px) {
   header {
-    padding: 0 20px; } }
+    padding: 0 20px; }
+    header #header-flex #header-main-logo {
+      max-width: 200px; } }
